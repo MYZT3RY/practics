@@ -36,7 +36,7 @@ begin
            begin
                  readln(fileName);
                  assign(file1,fileName);
-                 {$I-}
+                 //{$I-}
                  reset(file1);
 //                 {$I+}
                  if IOResult()<>0 then
