@@ -1,4 +1,4 @@
-const maxMeetings=20;
+uses crt;
 
 type dtOfMtng=record
      day:1..31;
@@ -24,43 +24,48 @@ end;
 
 var meeting:array of mtngs;
     file1:text;
-    tmp:string;
-    i:integer;
-    tempFile:string;
 
-procedure uploadDataFromFile(var fileName:string);
-var state:boolean;
+procedure uploadDataForMeetings();
 begin
-     state:=false;
-     while state<>true do
-           begin
-                 readln(fileName);
-                 assign(file1,fileName);
-                 //{$I-}
-                 reset(file1);
-//                 {$I+}
-                 if IOResult()<>0 then
-                    writeln('файл не найден')
-                 else begin
-                    writeln('файл найден');
-                    state:=true;
-                 end;
-           end;
+    writeln('загрузка из базы данных завершена');
+
+end;
+
+procedure uploadDataForDeclared();
+begin
+   writeln('загрузка из базы данных завершена');
+end;
+
+procedure uploadDataForOffenses();
+begin
+   writeln('загрузка из базы данных завершена');
+end;
+
+function checkFile():integer;
+var fileName:string;
+begin
+   readln(fileName);
+   assign(file1,fileName);
+   {$I-}
+   reset(file1);
+   {$I+}
+   if IOResult()<>0 then begin
+      writeln('файл не найден! попробуйте ещё раз (meetings.txt; declared.txt; offenses.txt;)');
+      result:=checkFile();
+   end else begin
+      writeln('начинается загрузка');
+      delay(3000);
+      if (fileName = 'meetings.txt') then
+         uploadDataForMeetings()
+      else if (fileName = 'declared.txt') then
+         uploadDataForDeclared()
+      else if (fileName = 'offenses.txt') then
+         uploadDataForOffenses();
+   end;
 end;
 
 begin
-     writeln('введите название файла, с которым нужно вести работу (meetings.txt; declared.txt; offenses.txt;)');
-     readln(tempFile);
-     uploadDataFromFile(tempFile);
-
-     {i:=1;
-     setlength(meeting,1);
-     assign(file1,'meetings.txt');
-     reset(file1);
-     while (eof(file1))do
-           begin
-                readln(file1,tempString);
-
-           end;}
-     readln;
+   writeln('введите название файла, с которым нужно вести работу (meetings.txt; declared.txt; offenses.txt;)');
+   checkFile();
+   readln;
 end.
