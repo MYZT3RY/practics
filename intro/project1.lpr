@@ -15,7 +15,7 @@ type mtngs=record
      id:integer;
      dateOfMeeting:dtOfMtng;
      timeOfMeeting:tmOfMtng;
-     addressOfMeeting:string;
+     addressOfMeeting:string[50];
      declaredMembers:integer;
      members:integer;
      listOfMembers:integer;
@@ -23,25 +23,46 @@ type mtngs=record
 end;
 
 var meeting:array of mtngs;
-    file1:text;
+    fileMeetings:file of mtngs;
 
 procedure uploadDataForMeetings();
+var i:integer;
 begin
-    writeln('§ Јаг§Є  Ё§ Ў §л ¤ ­­ле § ўҐаиҐ­ ');
+  i:=0;
+  writeln('загрузка из базы данных завершена');
+  assign(fileMeetings,'meetings.txt');
+  reset(fileMeetings);
+  setlength(meeting,100);
+  while(not eof(fileMeetings))do begin
+    read(fileMeetings,meeting[i]);
+    writeln('id ',meeting[i].id);
+    writeln(' address ',meeting[i].addressOfMeeting);
+    writeln(' flag ',meeting[i].acceptFlag);
+    writeln(' day ',meeting[i].dateOfMeeting.day);
+    writeln(' month ',meeting[i].dateOfMeeting.month);
+    writeln(' year ',meeting[i].dateOfMeeting.year);
+    writeln(' declared ',meeting[i].declaredMembers);
+    writeln(' list ', meeting[i].listOfMembers);
+    writeln(' hour ',meeting[i].timeOfMeeting.hour);
+    writeln(' minute ',meeting[i].timeOfMeeting.minute);
+    inc(i);
+  end;
+  setlength(meeting,i);
 end;
 
 procedure uploadDataForDeclared();
 begin
-   writeln('§ Јаг§Є  Ё§ Ў §л ¤ ­­ле § ўҐаиҐ­ ');
+   writeln('загрузка из базы данных завершена');
 end;
 
 procedure uploadDataForOffenses();
 begin
-   writeln('§ Јаг§Є  Ё§ Ў §л ¤ ­­ле § ўҐаиҐ­ ');
+   writeln('загрузка из базы данных завершена');
 end;
 
 function checkFile():integer;
 var fileName:string;
+    file1:text;
 begin
    readln(fileName);
    assign(file1,fileName);
@@ -49,10 +70,10 @@ begin
    reset(file1);
    {$I+}
    if IOResult()<>0 then begin
-      writeln('д ©« ­Ґ ­ ©¤Ґ­! Ї®Їа®Ўг©вҐ Ґйс а § (meetings.txt; declared.txt; offenses.txt;)');
+      writeln('файл не найден! попробуйте ещё раз (meetings.txt; declared.txt; offenses.txt;)');
       result:=checkFile();
    end else begin
-      writeln('­ зЁ­ Ґвбп § Јаг§Є ');
+      writeln('начинается загрузка');
       delay(3000);
       if (fileName = 'meetings.txt') then
          uploadDataForMeetings()
@@ -63,8 +84,23 @@ begin
    end;
 end;
 
+procedure writeInFile();
 begin
-   writeln('ўўҐ¤ЁвҐ ­ §ў ­ЁҐ д ©« , б Є®в®ал¬ ­г¦­® ўҐбвЁ а Ў®вг (meetings.txt; declared.txt; offenses.txt;)');
-   checkFile();
+     assign(fileMeetings,'meetings.txt');
+     rewrite(fileMeetings);
+     setlength(meeting,2);
+     meeting[0].id:=2;
+     meeting[1].id:=3;
+     meeting[0].addressOfMeeting:='улица пушкина дом калатушкина';
+     meeting[1].addressOfMeeting:='г. Москва';
+     write(fileMeetings,meeting[0]);
+     write(fileMeetings,meeting[1]);
+end;
+
+begin
+   writeln('введите название файла, с которым нужно вести работу (meetings.txt; declared.txt; offenses.txt;)');
+   //checkFile();
+   //writeInFile();
+   uploadDataForMeetings();
    readln;
 end.
