@@ -100,7 +100,5 @@ end;
 begin
    writeln('введите название файла, с которым нужно вести работу (meetings.txt; declared.txt; offenses.txt;)');
    //checkFile();
-   //writeInFile();
-   uploadDataForMeetings();
    readln;
 end.
