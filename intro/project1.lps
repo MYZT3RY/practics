@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="6">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="6" Y="6"/>
+        <UsageCount Value="259"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="units\unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="196"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="units\coreofmeeting.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="coreOfMeeting"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="23"/>
+        <CursorPos X="10" Y="39"/>
+        <UsageCount Value="103"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="units\coreofdeclared.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="coreOfDeclared"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="14"/>
+        <CursorPos X="10" Y="30"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="units\coreofoffense.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="coreOfOffense"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="10" Y="27"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="units\coreofmenu.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="coreOfMenu"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="190"/>
+        <CursorPos X="24" Y="216"/>
+        <UsageCount Value="64"/>
+        <Loaded Value="True"/>
+      </Unit5>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="10" Column="9"/>
+      </Position1>
+      <Position2>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="7" Column="10"/>
+      </Position2>
+      <Position3>
+        <Filename Value="project1.lpr"/>
+        <Caret Line="10" Column="9"/>
+      </Position3>
+      <Position4>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="106" Column="25" TopLine="68"/>
+      </Position4>
+      <Position5>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="82" Column="16" TopLine="66"/>
+      </Position5>
+      <Position6>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="119" Column="24" TopLine="83"/>
+      </Position6>
+      <Position7>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="16" Column="19"/>
+      </Position7>
+      <Position8>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="104" Column="31" TopLine="71"/>
+      </Position8>
+      <Position9>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="98" Column="39" TopLine="80"/>
+      </Position9>
+      <Position10>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="104" Column="33" TopLine="67"/>
+      </Position10>
+      <Position11>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="118" Column="6" TopLine="95"/>
+      </Position11>
+      <Position12>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="17" Column="36"/>
+      </Position12>
+      <Position13>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="122" Column="36" TopLine="96"/>
+      </Position13>
+      <Position14>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="125" Column="20" TopLine="97"/>
+      </Position14>
+      <Position15>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="86" Column="26" TopLine="49"/>
+      </Position15>
+      <Position16>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="87" Column="28" TopLine="54"/>
+      </Position16>
+      <Position17>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="19" Column="33"/>
+      </Position17>
+      <Position18>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="126" Column="108" TopLine="107"/>
+      </Position18>
+      <Position19>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="116" Column="21" TopLine="95"/>
+      </Position19>
+      <Position20>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="17" Column="36"/>
+      </Position20>
+      <Position21>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="18" Column="47"/>
+      </Position21>
+      <Position22>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="119" Column="18" TopLine="101"/>
+      </Position22>
+      <Position23>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="129" Column="17" TopLine="105"/>
+      </Position23>
+      <Position24>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="23" Column="27"/>
+      </Position24>
+      <Position25>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="120" Column="35" TopLine="112"/>
+      </Position25>
+      <Position26>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="218" Column="18" TopLine="186"/>
+      </Position26>
+      <Position27>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="160" Column="5" TopLine="141"/>
+      </Position27>
+      <Position28>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="6" Column="10" TopLine="6"/>
+      </Position28>
+      <Position29>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="15" Column="21"/>
+      </Position29>
+      <Position30>
+        <Filename Value="units\coreofmenu.pas"/>
+        <Caret Line="17" Column="15"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
