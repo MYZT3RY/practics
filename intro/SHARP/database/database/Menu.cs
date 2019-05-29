@@ -1,13 +1,16 @@
 ﻿using System;
 using InitClass;
+using System.Collections.Generic;
 using FileClass;
+using structes;
+using MenuClass;
 
 namespace MenuClass{
     class Menu{
         public void Main(){
             int state = 2, pointer = 1;
             var init = new Init();
-            init.Menu();
+            init.Menu(); //- to do
             do{
                 switch (state){
                     case 1:{
@@ -78,23 +81,9 @@ namespace MenuClass{
             } while (state != 6);
         }
         public void Sub(int database){
-            int state = 2, pointer = 1, defaultFileNotExist = 1;
-            switch (database){
-                case 1:{
-                        defaultFileNotExist = (CFile.Find("meetings") ? 0 : 1);
-                        break;
-                    }
-                case 2:{
-                        defaultFileNotExist = (CFile.Find("declared") ? 0 : 1);
-                        break;
-                    }
-                case 3:{
-                        defaultFileNotExist = (CFile.Find("offenses") ? 0 : 1);
-                        break;
-                    }
-            }
+            int state = 2, pointer = 1;
             var init = new Init();
-            init.Sub();
+            init.Sub();// - to do
             do{
                 switch (state){
                     case 1:{
@@ -150,18 +139,85 @@ namespace MenuClass{
                         }
                     case 3:{
                             // вывести все данные
+                            init.showBox(118, 30,1,1);
+                            Console.Read();
+                            Sub(database);
                             break;
                         }
-                    case 4:{
-                            // добавить данные
+                    case 4:{ // добавить данные
+                            switch (database){
+                                case 1:{
+                                        init.showBoxWithText(40, 8, "введите дату проведения митинга");
+                                        string tempDate = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите время проведения митинга");
+                                        string tempTime = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите адрес проведения митинга");
+                                        string tempAddress = Console.ReadLine();
+                                        init.showBoxWithText(50, 8, "введите количество приглашений на митинг");
+                                        string tempDeclared = Console.ReadLine();
+                                        init.showBoxWithText(30, 8, "флаг подтверждения");
+                                        string tempFlag = Console.ReadLine();
+                                        break;
+                                    }
+                                case 2:{
+                                        init.showBoxWithText(40, 8, "введите ФИО заявителя");
+                                        string tempName = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "флаг подтверждения");
+                                        string tempFlag = Console.ReadLine();
+                                        break;
+                                    }
+                                case 3:{
+                                        init.showBoxWithText(40, 8, "введите номер митинга");
+                                        string tempMettingId = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите номер заявления");
+                                        string tempDeclaredId = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите нормативный факт");
+                                        string tempFact = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите номер и пункт статьи");
+                                        string tempArticle = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "флаг осуждения судом");
+                                        string tempFlagOfCourt = Console.ReadLine();
+                                        break;
+                                    }
+                            }
+                            Sub(database);
                             break;
                         }
-                    case 5:{
-                            // удалить данные
+                    case 5:{// удалить данные
+                            init.showBoxWithText(40, 8, "введите уникальный номер поля");
+                            string tempId = Console.ReadLine();
+                            switch (database){
+                                case 1:{
+                                        //удаление митинга
+                                        break;
+                                    }
+                                case 2:{
+                                        //удаление заявителя
+                                        break;
+                                    }
+                                case 3:{
+                                        //удаление нормативного факта
+                                        break;
+                                    }
+                            }
+                            Sub(database);
                             break;
                         }
-                    case 6:{
-                            // найти данные
+                    case 6:{// найти данные
+                            init.showBoxWithText(40, 8, "введите уникальный номер поля");
+                            string tempId = Console.ReadLine();
+                            switch (database){
+                                case 1:{//митинг
+                                        break;
+                                    }
+                                case 2:{//заявитель
+                                        break;
+                                    }
+                                case 3:{//нормативный факт
+                                        break;
+                                    }
+                            }
+                            Sub(database);
                             break;
                         }
                     case 7:{
