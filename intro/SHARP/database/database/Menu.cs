@@ -17,29 +17,11 @@ namespace MenuClass{
                             state = 2;
                             switch (Console.ReadKey(true).Key){
                                 case ConsoleKey.UpArrow:{
-                                        switch (pointer){
-                                            case 2: case 3:{
-                                                    pointer--;
-                                                    break;
-                                                }
-                                            default:{
-                                                    pointer = 3;
-                                                    break;
-                                                }
-                                        }
+                                        pointer = (pointer > 1) ? pointer-1 : 3;
                                         break;
                                     }
                                 case ConsoleKey.DownArrow:{
-                                        switch (pointer){
-                                            case 1: case 2:{
-                                                    pointer++;
-                                                    break;
-                                                }
-                                            default:{
-                                                    pointer = 1;
-                                                    break;
-                                                }
-                                        }
+                                        pointer = (pointer < 3) ? pointer+1 : 1;
                                         break;
                                     }
                                 case ConsoleKey.Escape:{
@@ -48,24 +30,14 @@ namespace MenuClass{
                                         break;
                                     }
                                 case ConsoleKey.Enter:{
-                                        switch (pointer){
-                                            case 1: case 2: case 3:{
-                                                    state = pointer + 2;
-                                                    break;
-                                                }
-                                        }
+                                        state = (pointer >= 1 && pointer <= 3) ? pointer+2 : 3;
                                         break;
                                     }
                             }
                             break;
                         }
                     case 2:{
-                            switch (pointer){
-                                case 1: case 2: case 3:{
-                                        Console.SetCursorPosition((pointer == 1) ? 12 : 14, 4 + (pointer - 3));
-                                        break;
-                                    }
-                            }
+                            Console.SetCursorPosition((pointer == 1) ? 12 : 14, 4 + (pointer - 3));
                             state = 1;
                             break;
                         }
@@ -90,55 +62,39 @@ namespace MenuClass{
                             state = 2;
                             switch (Console.ReadKey(true).Key){
                                 case ConsoleKey.Enter:{
-                                        switch (pointer){
-                                            case 1: case 2: case 3: case 4: case 5:{
-                                                    state = pointer + 2;
-                                                    break;
-                                                }
-                                        }
+                                        state = (pointer >= 1 && pointer <= 5) ? pointer+2 : 5;
                                         break;
                                     }
                                 case ConsoleKey.UpArrow:{
-                                        switch (pointer){
-                                            case 2: case 3: case 4: case 5:{
-                                                    pointer--;
-                                                    break;
-                                                }
-                                            default:{
-                                                    pointer = 5;
-                                                    break;
-                                                }
-                                        }
+                                        pointer = (pointer > 1) ? pointer-1 : 5;
                                         break;
                                     }
                                 case ConsoleKey.DownArrow:{
-                                        switch (pointer){
-                                            case 1: case 2: case 3: case 4:{
-                                                    pointer++;
-                                                    break;
-                                                }
-                                            default:{
-                                                    pointer = 1;
-                                                    break;
-                                                }
-                                        }
+                                        pointer = (pointer < 5) ? pointer+1 : 1;
                                         break;
                                     }
                             }
                             break;
                         }
                     case 2:{
-                            switch (pointer){
-                                case 1: case 2: case 3: case 4: case 5:{
-                                        Console.SetCursorPosition((pointer == 1) ? 23 : (pointer == 2) ? 20 : (pointer == 3) ? 19 : (pointer == 4) ? 17 : (pointer == 5) ? 22 : 23, pointer + 1);
-                                        break;
-                                    }
-                            }
+                            Console.SetCursorPosition((pointer == 1) ? 23 : (pointer == 2) ? 20 : (pointer == 3) ? 19 : (pointer == 4) ? 17 : (pointer == 5) ? 22 : 23, pointer + 1);
                             state = 1;
                             break;
                         }
                     case 3:{
                             // вывести все данные
+                            switch (database)
+                            {
+                                case 1:{//митинги
+                                        break;
+                                    }
+                                case 2:{//заявители
+                                        break;
+                                    }
+                                case 3:{//нарушения
+                                        break;
+                                    }
+                            }
                             init.showBox(118, 30,1,1);
                             Console.Read();
                             Sub(database);
@@ -147,6 +103,8 @@ namespace MenuClass{
                     case 4:{ // добавить данные
                             switch (database){
                                 case 1:{
+                                        init.showBoxWithText(40, 8, "введите номер для митинга");
+                                        string tempId = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "введите дату проведения митинга");
                                         string tempDate = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "введите время проведения митинга");
