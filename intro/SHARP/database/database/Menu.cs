@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using FileClass;
 using structes;
 using MenuClass;
+using database;
 
 namespace MenuClass{
     class Menu{
@@ -103,10 +104,18 @@ namespace MenuClass{
                     case 4:{ // добавить данные
                             switch (database){
                                 case 1:{
-                                        init.showBoxWithText(40, 8, "введите номер для митинга");
+                                        init.showBoxWithText(40, 8, $"введите номер для митинга (до {Program.maxElements})");
                                         string tempId = Console.ReadLine();
-                                        init.showBoxWithText(40, 8, "введите дату проведения митинга");
-                                        string tempDate = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите день проведения митинга");
+                                        string tempDay = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите месяц проведения митинга");
+                                        string tempMonth = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите год проведения митинга");
+                                        string tempYear = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите час проведения митинга");
+                                        string tempHour = Console.ReadLine();
+                                        init.showBoxWithText(40, 8, "введите минуту проведения митинга");
+                                        string tempMinute = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "введите время проведения митинга");
                                         string tempTime = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "введите адрес проведения митинга");
@@ -115,9 +124,12 @@ namespace MenuClass{
                                         string tempDeclared = Console.ReadLine();
                                         init.showBoxWithText(30, 8, "флаг подтверждения");
                                         string tempFlag = Console.ReadLine();
+                                        
                                         break;
                                     }
                                 case 2:{
+                                        init.showBoxWithText(40, 8, $"введит номер заявителя (до {Program.maxElements})");
+                                        string tempId = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "введите ФИО заявителя");
                                         string tempName = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "флаг подтверждения");
@@ -125,7 +137,7 @@ namespace MenuClass{
                                         break;
                                     }
                                 case 3:{
-                                        init.showBoxWithText(40, 8, "введите номер митинга");
+                                        init.showBoxWithText(40, 8, $"введите номер митинга (до {Program.maxElements})");
                                         string tempMettingId = Console.ReadLine();
                                         init.showBoxWithText(40, 8, "введите номер заявления");
                                         string tempDeclaredId = Console.ReadLine();
@@ -142,7 +154,7 @@ namespace MenuClass{
                             break;
                         }
                     case 5:{// удалить данные
-                            init.showBoxWithText(40, 8, "введите уникальный номер поля");
+                            init.showBoxWithText(40, 8, $"введите уникальный номер поля (до {Program.maxElements})");
                             string tempId = Console.ReadLine();
                             switch (database){
                                 case 1:{
@@ -162,7 +174,7 @@ namespace MenuClass{
                             break;
                         }
                     case 6:{// найти данные
-                            init.showBoxWithText(40, 8, "введите уникальный номер поля");
+                            init.showBoxWithText(40, 8, $"введите уникальный номер поля (до {Program.maxElements})");
                             string tempId = Console.ReadLine();
                             switch (database){
                                 case 1:{//митинг
