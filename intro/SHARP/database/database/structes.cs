@@ -43,32 +43,86 @@ public struct Meetings{
         return id;
     }
 
+    public void setId(int id){
+        this.id = id;
+    }
+
     public string getDate(){
         return $"{dateOfMeeting.year}/{dateOfMeeting.month}/{dateOfMeeting.day}";
+    }
+
+    public void setDate(int type, int value){
+        switch (type) {
+            case 1:{
+                    this.dateOfMeeting.day = value;
+                    break;
+                }
+            case 2:{
+                    this.dateOfMeeting.month = value;
+                    break;
+                }
+            case 3:{
+                    this.dateOfMeeting.year = value;
+                    break;
+                }
+        }
     }
 
     public string getTime(){
         return $"{timeOfMeeting.hour}:{timeOfMeeting.minute}";
     }
 
+    public void setTime(int type, int value){
+        switch (type){
+            case 1:{
+                    this.timeOfMeeting.hour = value;
+                    break;
+                }
+            case 2:{
+                    this.timeOfMeeting.minute = value;
+                    break;
+                }
+        }
+    }
+
     public string getAddress(){
         return addressOfMeeting;
+    }
+
+    public void setAddress(string address){
+        this.addressOfMeeting = address;
     }
 
     public int getDeclared(){
         return declaredMembers;
     }
 
+    public void setDeclared(int declared){
+        this.declaredMembers = declared;
+    }
+
     public int getMembers(){
         return members;
+    }
+
+    public void setMembers(int members){
+        this.members = members;
     }
 
     public int getListOfMembers(){
         return listOfMembers;
     }
 
+    public void setListOfMembers(int members){
+        this.listOfMembers = members;
+    }
+
     public bool getFlag(){
         return acceptFlag;
+    }
+
+    public void setFlag(bool flag){
+        this.acceptFlag = flag;
     }
 }
 
@@ -98,6 +152,23 @@ struct Declared{
     public string getName(){
         return $"{name.lastname} {name.name} {name.pantronymic}";
     }
+
+    public void setName(int type, string text){
+        switch (type){
+            case 1:{
+                    this.name.lastname = text;
+                    break;
+                }
+            case 2:{
+                    this.name.name = text;
+                    break;
+                }
+            case 3:{
+                    this.name.pantronymic = text;
+                    break;
+                }
+        }
+    }
 }
 
 struct Offenses{
@@ -125,20 +196,40 @@ struct Offenses{
         return idOfMeeting;
     }
 
+    public void setIdOfMeeting(int id){
+        this.idOfMeeting = id;
+    }
+
     public int getIdOfDeclared(){
         return idOfDeclared;
+    }
+
+    public void setIdOfDeclared(int id){
+        this.idOfDeclared = id;
     }
 
     public string getRegulatoryFact(){
         return regulatoryFact;
     }
 
+    public void setRegulatoryFact(string text){
+        this.regulatoryFact = text;
+    }
+
     public float getArticleAndParagraph(){
         return articleAndParagraphOfRegulatoryFact;
     }
 
+    public void setArticleAndParagraph(float AnP){
+        this.articleAndParagraphOfRegulatoryFact = AnP;
+    }
+
     public bool getFlagOfCourtConviction(){
         return flagOfCourtConviction;
+    }
+
+    public void setFlagOfCourtConviction(bool flag){
+        this.flagOfCourtConviction = flag;
     }
 }
 
